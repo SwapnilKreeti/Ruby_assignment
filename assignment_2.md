@@ -52,3 +52,25 @@ print_days(arr)
 ### Q3. Given an array of integers, sort the array using bubble,insertion or selection sort algorithm [any one]
 ### arr = [12, 15, 9, 4, 30, 3, 7];
 #### Answer:
+```
+def selection_sort(array)
+  n = array.length
+
+  for i in 0..n-2
+    curr_min_index = i
+
+    for j in i+1..n-1
+      curr_min_index = j if array[j] < array[curr_min_index]
+    end
+
+    array[i], array[curr_min_index] = array[curr_min_index], array[i] if curr_min_index != i
+  end
+
+  array
+end
+
+# Example :
+input_array = [12, 15, 9, 4, 30, 3, 7]
+sorted_array = selection_sort(input_array)
+puts sorted_array.join(', ')
+```
